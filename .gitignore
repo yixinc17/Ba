@@ -1,9 +1,19 @@
+# ================ Unity Editor 临时 & 缓存 =================
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
-[Bb]uild/
-[Bb]uilds/
 UserSettings/
-*.csproj
-*.unityproj
-*.sln
+
+# 仅忽略 根目录 下的 Build/ 和 Builds/ （docs/ 下的不会被忽略）
+/Build/
+/Builds/
+
+# Visual Studio / Rider 生成文件
+/*.csproj
+/*.unityproj
+/*.sln
+
+# ================ WebGL 演示输出 =================
+# 保证 docs/ 整个文件夹及其子目录都被纳入版本控制
+!important! docs/      # “!” 是 gitignore 里取消忽略的意思
+!docs/**              # 递归取消忽略 docs 下的所有内容
